@@ -43,7 +43,7 @@ with open(os.path.join(src_dir, "cryptography", "__about__.py")) as f:
 # `pyproject.toml`
 setuptools_rust = "setuptools-rust>=0.11.4"
 install_requirements = ["cffi>=1.12"]
-setup_requirements = install_requirements + [setuptools_rust]
+setup_requirements = install_requirements
 
 with open(os.path.join(base_dir, "README.rst")) as f:
     long_description = f.read()
@@ -100,6 +100,9 @@ try:
                 "iso8601",
                 "pytz",
                 "hypothesis>=1.11.4,!=3.79.2",
+            ],
+            "dev": [
+                setuptools_rust
             ],
             "docs": [
                 "sphinx >= 1.6.5,!=1.8.0,!=3.1.0,!=3.1.1",
